@@ -6,6 +6,10 @@ const seekerProfileSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  phone: {
+    type: String,
+    trim: true
+  },
   headline: {
     type: String,
     trim: true
@@ -18,26 +22,19 @@ const seekerProfileSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  skills: [{
-    type: String,
-    trim: true
-  }],
+  skills: [String],
   education: [{
-    institution: String,
     degree: String,
-    field: String,
-    startYear: Number,
-    endYear: Number,
-    current: Boolean
+    school: String,
+    year: String,
+    id: Number
   }],
   experience: [{
     title: String,
     company: String,
-    location: String,
-    startDate: Date,
-    endDate: Date,
-    current: Boolean,
-    description: String
+    duration: String,
+    description: String,
+    id: Number
   }],
   resumeUrl: String,
   resumePublicId: String, // For Cloudinary

@@ -23,10 +23,10 @@ app.get('/', (req, res) => {
 
 // Define Routes
 import authRoutes from './routes/authRoutes.js';
-// import userRoutes from './routes/userRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import jobRoutes from './routes/jobRoutes.js';
 
-// app.use('/api/users', userRoutes);
+app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
 
