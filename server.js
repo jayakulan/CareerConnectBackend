@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
+import aiRoutes from "./routes/aiRoutes.js";
+import { initPinecone } from "./services/pineconeClient.js";
 
 // Load env vars
 dotenv.config();
@@ -12,9 +14,13 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+// Middleware
+app.use(express.json({ limit: "10mb" }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.urlencoded({ extended: true }));
+
+// Initialize Pinecone
+await initPinecone();
 
 // Routes
 app.get('/', (req, res) => {
@@ -25,10 +31,13 @@ app.get('/', (req, res) => {
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import jobRoutes from './routes/jobRoutes.js';
+import contactRoutes from './routes/contactRoutes.js';
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
+app.use('/api/contact', contactRoutes);
+app.use("/api/ai", aiRoutes);
 
 const PORT = process.env.PORT || 5000;
 

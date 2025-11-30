@@ -19,7 +19,7 @@ const getJobs = async (req, res) => {
             : {};
 
         const jobs = await Job.find({ ...keyword, status: 'published' })
-            .populate('company', 'name logo location')
+            .populate('company', 'companyName logo location')
             .sort({ createdAt: -1 });
 
         res.json(jobs);
@@ -33,7 +33,7 @@ const getJobs = async (req, res) => {
 // @access  Public
 const getJobById = async (req, res) => {
     try {
-        const job = await Job.findById(req.params.id).populate('company', 'name logo description website');
+        const job = await Job.findById(req.params.id).populate('company', 'companyName logo description website');
 
         if (job) {
             res.json(job);
