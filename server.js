@@ -32,12 +32,18 @@ import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import jobRoutes from './routes/jobRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
+import applicationRoutes from './routes/applicationRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
+import resumeRoutes from './routes/resumeRoutes.js';
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/contact', contactRoutes);
 app.use("/api/ai", aiRoutes);
+app.use('/api/applications', applicationRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/resumes', resumeRoutes);
 
 const PORT = process.env.PORT || 5000;
 

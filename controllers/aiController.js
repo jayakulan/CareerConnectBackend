@@ -1,13 +1,9 @@
 // aiController.js
 import OpenAI from "openai";
-import * as pdfParseModule from "pdf-parse";
 import { queryPinecone } from "../services/retrieval.js";
 import dotenv from "dotenv";
 
 dotenv.config();
-
-// Extract the actual function from the module
-const pdfParse = pdfParseModule.default || pdfParseModule;
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -23,6 +19,9 @@ export const analyzeResume = async (req, res) => {
         if (req.file) {
             try {
                 console.log("Extracting text from PDF...");
+                // Dynamic import to avoid initialization issues
+                const pdfParseModule = await import("pdf-parse");
+                const pdfParse = pdfParseModule.default || pdfParseModule;
                 const pdfData = await pdfParse(req.file.buffer);
                 resumeText = pdfData.text;
                 console.log("PDF extraction successful, text length:", resumeText.length);

@@ -1,5 +1,6 @@
 import User from '../models/User.js';
 import SeekerProfile from '../models/SeekerProfile.js';
+import CompanyProfile from '../models/CompanyProfile.js';
 
 // @desc    Get user profile
 // @route   GET /api/users/profile
@@ -34,6 +35,22 @@ const getUserProfile = async (req, res) => {
                     experience: seekerProfile.experience,
                     education: seekerProfile.education,
                     resumeUrl: seekerProfile.resumeUrl,
+                };
+            }
+        }
+        // If company, get their profile details
+        else if (user.role === 'company' && user.profile) {
+            const companyProfile = await CompanyProfile.findById(user.profile);
+            if (companyProfile) {
+                profileData = {
+                    ...profileData,
+                    companyName: companyProfile.companyName,
+                    description: companyProfile.description,
+                    website: companyProfile.website,
+                    location: companyProfile.location,
+                    industry: companyProfile.industry,
+                    companySize: companyProfile.companySize,
+                    logo: companyProfile.logo
                 };
             }
         }
@@ -102,6 +119,57 @@ const updateUserProfile = async (req, res) => {
                 skills: seekerProfile.skills,
                 experience: seekerProfile.experience,
                 education: seekerProfile.education,
+            });
+        }
+        // If company, update or create their profile
+        else if (user.role === 'company') {
+            let companyProfile;
+
+            if (user.profile) {
+                companyProfile = await CompanyProfile.findById(user.profile);
+            }
+
+            if (!companyProfile) {
+                companyProfile = new CompanyProfile({
+                    user: user._id,
+                    companyName: req.body.companyName || user.name // Default to user name if not provided
+                });
+                user.profile = companyProfile._id;
+                user.profileModel = 'CompanyProfile';
+                await user.save();
+            }
+
+            // Update fields
+            if (req.body.companyName) companyProfile.companyName = req.body.companyName;
+            if (req.body.description) companyProfile.description = req.body.description;
+            if (req.body.website) companyProfile.website = req.body.website;
+            if (req.body.industry) companyProfile.industry = req.body.industry;
+            if (req.body.companySize) companyProfile.companySize = req.body.companySize;
+
+            // Handle location object update
+            if (req.body.location) {
+                // If it's a string (from simple form), treat as city/address
+                if (typeof req.body.location === 'string') {
+                    companyProfile.location = { ...companyProfile.location, city: req.body.location };
+                } else {
+                    // If it's an object
+                    companyProfile.location = { ...companyProfile.location, ...req.body.location };
+                }
+            }
+
+            await companyProfile.save();
+
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                companyName: companyProfile.companyName,
+                description: companyProfile.description,
+                website: companyProfile.website,
+                location: companyProfile.location,
+                industry: companyProfile.industry,
+                companySize: companyProfile.companySize
             });
         } else {
             res.json({
