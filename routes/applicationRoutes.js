@@ -8,7 +8,8 @@ import {
     getApplicationById,
     updateApplicationStatus,
     deleteApplication,
-    downloadResume
+    downloadResume,
+    respondToInterview
 } from '../controllers/applicationController.js';
 
 const router = express.Router();
@@ -17,6 +18,7 @@ const router = express.Router();
 router.post('/apply/:jobId', protect, upload.single('resume'), applyForJob);
 router.get('/seeker', protect, getSeekerApplications);
 router.delete('/:id', protect, deleteApplication);
+router.put('/:id/interview-response', protect, respondToInterview);
 
 // Company routes
 router.get('/company', protect, getCompanyApplications);

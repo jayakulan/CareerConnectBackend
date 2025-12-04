@@ -1,5 +1,5 @@
 import express from 'express';
-import { getJobs, getJobById, createJob, applyJob, getMyJobs } from '../controllers/jobController.js';
+import { getJobs, getJobById, createJob, applyJob, getMyJobs, updateJob, deleteJob, toggleSaveJob, getSavedJobs } from '../controllers/jobController.js';
 import { protect } from '../middleware/authMiddleware.js';
 import { upload } from '../utils/cloudinary.js';
 
@@ -12,8 +12,16 @@ router.route('/')
 router.route('/myjobs')
     .get(protect, getMyJobs);
 
+router.route('/saved')
+    .get(protect, getSavedJobs);
+
 router.route('/:id')
-    .get(getJobById);
+    .get(getJobById)
+    .put(protect, updateJob)
+    .delete(protect, deleteJob);
+
+router.route('/:id/save')
+    .post(protect, toggleSaveJob);
 
 router.route('/:id/apply')
     .post(protect, upload.single('resume'), applyJob);

@@ -189,7 +189,7 @@ export const getApplicationById = async (req, res) => {
 export const updateApplicationStatus = async (req, res) => {
     try {
         const { id } = req.params;
-        const { status, notes, interviewDate } = req.body;
+        const { status, notes, interviewDetails } = req.body;
         const companyId = req.user.id;
 
         const application = await Application.findById(id)
@@ -208,7 +208,7 @@ export const updateApplicationStatus = async (req, res) => {
         // Update application
         application.status = status;
         if (notes) application.notes = notes;
-        if (interviewDate) application.interviewDate = interviewDate;
+        if (interviewDetails) application.interviewDetails = interviewDetails;
         application.updatedAt = Date.now();
 
         await application.save();
@@ -250,6 +250,33 @@ export const updateApplicationStatus = async (req, res) => {
             link: `/seeker/applications/${application._id}`
         });
 
+        // Send email notification
+        const { sendInterviewEmail, sendStatusUpdateEmail } = await import('../services/emailService.js');
+
+        // Get company details
+        const company = await User.findById(companyId).populate('profile');
+        const companyName = company.profile?.companyName || company.name || 'Company';
+
+        if (status === 'interview' && interviewDetails) {
+            // Send interview scheduling email
+            await sendInterviewEmail(
+                application.seeker.email,
+                application.seeker.name,
+                interviewDetails,
+                application.job.title,
+                companyName
+            );
+        } else {
+            // Send general status update email
+            await sendStatusUpdateEmail(
+                application.seeker.email,
+                application.seeker.name,
+                status,
+                application.job.title,
+                companyName
+            );
+        }
+
         res.json({
             message: 'Application status updated successfully',
             application
@@ -257,6 +284,34 @@ export const updateApplicationStatus = async (req, res) => {
     } catch (error) {
         console.error('Error updating application status:', error);
         res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+// Respond to interview (Seeker)
+export const respondToInterview = async (req, res) => {
+    try {
+        const { status } = req.body; // 'confirmed' or 'declined'
+        const application = await Application.findById(req.params.id);
+
+        if (!application) {
+            return res.status(404).json({ message: 'Application not found' });
+        }
+
+        // Check ownership
+        if (application.seeker.toString() !== req.user._id.toString()) {
+            return res.status(403).json({ message: 'Not authorized' });
+        }
+
+        if (application.status !== 'interview' || !application.interviewDetails) {
+            return res.status(400).json({ message: 'No interview scheduled for this application' });
+        }
+
+        application.interviewDetails.status = status;
+        await application.save();
+
+        res.json(application);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 };
 

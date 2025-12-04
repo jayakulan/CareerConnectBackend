@@ -40,7 +40,11 @@ const userSchema = new mongoose.Schema({
   profileModel: {
     type: String,
     enum: ['SeekerProfile', 'CompanyProfile']
-  }
+  },
+  savedJobs: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Job'
+  }]
 }, { timestamps: true });
 
 // Hash password before saving

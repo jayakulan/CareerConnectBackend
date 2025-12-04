@@ -48,7 +48,22 @@ const applicationSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    interviewDate: Date,
+    interviewDetails: {
+        date: Date,
+        time: String,
+        type: {
+            type: String,
+            enum: ['in-person', 'online', 'phone'],
+            default: 'online'
+        },
+        location: String, // Physical address or meeting link
+        message: String,
+        status: {
+            type: String,
+            enum: ['pending', 'confirmed', 'declined'],
+            default: 'pending'
+        }
+    },
     appliedAt: {
         type: Date,
         default: Date.now

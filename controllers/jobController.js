@@ -171,4 +171,124 @@ const getMyJobs = async (req, res) => {
     }
 };
 
-export { getJobs, getJobById, createJob, applyJob, getMyJobs };
+// @desc    Update a job
+// @route   PUT /api/jobs/:id
+// @access  Private/Company
+const updateJob = async (req, res) => {
+    try {
+        const job = await Job.findById(req.params.id);
+
+        if (!job) {
+            return res.status(404).json({ message: 'Job not found' });
+        }
+
+        // Check if user owns this job
+        if (job.postedBy.toString() !== req.user._id.toString()) {
+            return res.status(403).json({ message: 'Not authorized to update this job' });
+        }
+
+        const {
+            title,
+            description,
+            jobType,
+            location,
+            remote,
+            salary,
+            skills,
+            experience,
+            education,
+            status
+        } = req.body;
+
+        // Update fields
+        if (title) job.title = title;
+        if (description) job.description = description;
+        if (jobType) job.jobType = jobType;
+        if (location) job.location = location;
+        if (remote !== undefined) job.remote = remote;
+        if (salary) job.salary = salary;
+        if (skills) job.skills = skills;
+        if (experience) job.experience = experience;
+        if (education) job.education = education;
+        if (status) job.status = status;
+
+        const updatedJob = await job.save();
+        res.json(updatedJob);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
+// @desc    Delete a job
+// @route   DELETE /api/jobs/:id
+// @access  Private/Company
+const deleteJob = async (req, res) => {
+    try {
+        const job = await Job.findById(req.params.id);
+
+        if (!job) {
+            return res.status(404).json({ message: 'Job not found' });
+        }
+
+        // Check if user owns this job
+        if (job.postedBy.toString() !== req.user._id.toString()) {
+            return res.status(403).json({ message: 'Not authorized to delete this job' });
+        }
+
+        // Check if there are active applications
+        if (job.applications && job.applications.length > 0) {
+            return res.status(400).json({
+                message: 'Cannot delete job with existing applications. Please close the job instead.',
+                hasApplications: true
+            });
+        }
+
+        await Job.findByIdAndDelete(req.params.id);
+        res.json({ message: 'Job deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+
+
+// @desc    Toggle save job
+// @route   POST /api/jobs/:id/save
+// @access  Private/Seeker
+const toggleSaveJob = async (req, res) => {
+    try {
+        const user = await User.findById(req.user._id);
+        const jobId = req.params.id;
+
+        if (user.savedJobs.includes(jobId)) {
+            // Unsave
+            user.savedJobs = user.savedJobs.filter(id => id.toString() !== jobId);
+            await user.save();
+            res.json({ message: 'Job removed from saved', isSaved: false });
+        } else {
+            // Save
+            user.savedJobs.push(jobId);
+            await user.save();
+            res.json({ message: 'Job saved successfully', isSaved: true });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// @desc    Get saved jobs
+// @route   GET /api/jobs/saved
+// @access  Private/Seeker
+const getSavedJobs = async (req, res) => {
+    try {
+        const user = await User.findById(req.user._id).populate({
+            path: 'savedJobs',
+            populate: { path: 'company', select: 'companyName logo location' }
+        });
+        res.json(user.savedJobs);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export { getJobs, getJobById, createJob, applyJob, getMyJobs, updateJob, deleteJob, toggleSaveJob, getSavedJobs };
