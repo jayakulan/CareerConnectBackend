@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "ingest": "node scripts/ingestKnowledgeBase.js",
+    "check-pinecone": "node scripts/checkPineconeStatus.js",
+    "test-rag": "node scripts/quickTest.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

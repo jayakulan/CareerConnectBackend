@@ -1,0 +1,198 @@
+RESUME BEST PRACTICES AND GUIDELINES
+
+=== GENERAL RESUME WRITING PRINCIPLES ===
+
+1. LENGTH AND FORMAT
+- Keep resume to 1-2 pages for most professionals
+- Use 10-12 point font size (Arial, Calibri, or Times New Roman)
+- Maintain consistent formatting throughout
+- Use clear section headers
+- Include adequate white space for readability
+- Save and send as PDF to preserve formatting
+
+2. CONTACT INFORMATION
+- Full name at the top
+- Professional email address
+- Phone number with area code
+- LinkedIn profile URL (if applicable)
+- Location (city and state, no full address needed)
+- Portfolio or personal website (for relevant fields)
+
+3. PROFESSIONAL SUMMARY
+- Write 2-4 sentences highlighting key qualifications
+- Include years of experience
+- Mention core competencies
+- Align with target job requirements
+- Use action-oriented language
+- Avoid generic statements
+
+4. WORK EXPERIENCE
+- List in reverse chronological order
+- Include company name, location, job title, and dates
+- Use bullet points for achievements
+- Start each bullet with strong action verbs
+- Quantify achievements with numbers and percentages
+- Focus on results and impact, not just duties
+- Tailor experience to match job description
+
+5. EDUCATION
+- List degree, major, institution, and graduation year
+- Include GPA if above 3.5 and recent graduate
+- Mention relevant coursework for entry-level positions
+- Include academic honors and awards
+- List certifications and licenses
+
+6. SKILLS SECTION
+- Separate technical and soft skills
+- List programming languages, tools, and technologies
+- Include language proficiencies
+- Mention industry-specific skills
+- Avoid rating skills with bars or percentages
+- Only include skills you can demonstrate
+
+7. KEYWORDS AND ATS OPTIMIZATION
+- Use keywords from job description
+- Include industry-specific terminology
+- Spell out acronyms first, then use abbreviation
+- Use standard section headings
+- Avoid headers, footers, and text boxes
+- Use simple bullet points
+- Save as .docx or .pdf
+
+=== COMMON MISTAKES TO AVOID ===
+
+1. Spelling and grammar errors
+2. Using personal pronouns (I, me, my)
+3. Including irrelevant information
+4. Using passive voice
+5. Listing references on resume
+6. Including photo (unless specifically requested)
+7. Using unprofessional email addresses
+8. Inconsistent formatting
+9. Unexplained employment gaps
+10. Lying or exaggerating qualifications
+
+=== ACTION VERBS FOR DIFFERENT SKILLS ===
+
+LEADERSHIP: Led, Directed, Managed, Supervised, Coordinated, Orchestrated, Spearheaded, Championed
+
+ACHIEVEMENT: Achieved, Exceeded, Surpassed, Accomplished, Delivered, Attained, Earned, Won
+
+COMMUNICATION: Presented, Authored, Briefed, Communicated, Conveyed, Documented, Reported, Translated
+
+TECHNICAL: Developed, Engineered, Programmed, Designed, Built, Implemented, Integrated, Automated
+
+ANALYTICAL: Analyzed, Assessed, Evaluated, Investigated, Researched, Examined, Measured, Calculated
+
+CREATIVE: Created, Designed, Conceptualized, Innovated, Pioneered, Launched, Established, Initiated
+
+IMPROVEMENT: Improved, Enhanced, Optimized, Streamlined, Transformed, Modernized, Upgraded, Refined
+
+FINANCIAL: Budgeted, Forecasted, Allocated, Reduced costs, Increased revenue, Maximized, Saved
+
+=== INDUSTRY-SPECIFIC TIPS ===
+
+TECHNOLOGY/SOFTWARE DEVELOPMENT:
+- Highlight programming languages and frameworks
+- Include GitHub profile or portfolio
+- Mention Agile/Scrum experience
+- List technical certifications
+- Describe system architecture experience
+- Quantify code efficiency improvements
+
+MARKETING/SALES:
+- Include metrics (conversion rates, revenue growth)
+- Mention CRM systems experience
+- Highlight campaign results
+- List digital marketing tools
+- Include social media metrics
+- Demonstrate ROI achievements
+
+HEALTHCARE:
+- List licenses and certifications prominently
+- Include specialized training
+- Mention patient care metrics
+- Highlight compliance knowledge
+- Include EMR/EHR systems
+- Demonstrate quality improvement initiatives
+
+FINANCE/ACCOUNTING:
+- List relevant certifications (CPA, CFA)
+- Include financial software proficiency
+- Mention regulatory compliance experience
+- Quantify cost savings or revenue impact
+- Highlight audit experience
+- Include financial modeling skills
+
+EDUCATION:
+- Highlight teaching methodologies
+- Include curriculum development experience
+- Mention student achievement metrics
+- List educational technology proficiency
+- Include professional development
+- Highlight classroom management skills
+
+=== RESUME SECTIONS PRIORITY ===
+
+ESSENTIAL SECTIONS (Must Have):
+1. Contact Information
+2. Professional Summary or Objective
+3. Work Experience
+4. Education
+5. Skills
+
+OPTIONAL SECTIONS (Include if Relevant):
+1. Certifications and Licenses
+2. Projects
+3. Publications
+4. Awards and Honors
+5. Volunteer Experience
+6. Professional Affiliations
+7. Languages
+8. Technical Proficiencies
+
+=== QUANTIFYING ACHIEVEMENTS ===
+
+Instead of: "Responsible for managing team"
+Better: "Managed team of 12 developers, delivering 15+ projects on time"
+
+Instead of: "Improved sales"
+Better: "Increased sales by 35% year-over-year, generating $2M in additional revenue"
+
+Instead of: "Handled customer service"
+Better: "Resolved 50+ customer inquiries daily with 98% satisfaction rating"
+
+Instead of: "Worked on marketing campaigns"
+Better: "Executed 10 digital marketing campaigns, increasing engagement by 45%"
+
+=== TAILORING RESUME TO JOB DESCRIPTION ===
+
+1. Read job description carefully
+2. Identify required and preferred qualifications
+3. Match your experience to requirements
+4. Use similar language and keywords
+5. Prioritize relevant experience
+6. Adjust professional summary
+7. Reorder skills to match priorities
+8. Include relevant projects or achievements
+
+=== FORMATTING GUIDELINES ===
+
+MARGINS: 0.5 to 1 inch on all sides
+FONT SIZE: 10-12 points for body, 14-16 for name
+LINE SPACING: 1.0 to 1.15
+BULLET POINTS: Use consistent style throughout
+DATES: Use consistent format (MM/YYYY or Month YYYY)
+ALIGNMENT: Left-aligned for most content
+BOLD/ITALICS: Use sparingly for emphasis
+
+=== COVER LETTER INTEGRATION ===
+
+- Always submit with tailored cover letter
+- Address hiring manager by name if possible
+- Explain why you're interested in position
+- Highlight 2-3 key qualifications
+- Show knowledge of company
+- Keep to one page
+- Match resume formatting style
+- Include call to action

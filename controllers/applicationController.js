@@ -1,5 +1,6 @@
 ﻿import Application from '../models/Application.js';
 import Job from '../models/Job.js';
+import User from '../models/User.js';
 import SeekerProfile from '../models/SeekerProfile.js';
 import Notification from '../models/Notification.js';
 import { uploadToCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js';
@@ -250,32 +251,41 @@ export const updateApplicationStatus = async (req, res) => {
             link: `/seeker/applications/${application._id}`
         });
 
-        // Send email notification
-        const { sendInterviewEmail, sendStatusUpdateEmail } = await import('../services/emailService.js');
+        // Send email notification (optional - won't fail if not configured)
+        try {
+            const { sendInterviewEmail, sendStatusUpdateEmail } = await import('../services/emailService.js');
 
-        // Get company details
-        const company = await User.findById(companyId).populate('profile');
-        const companyName = company.profile?.companyName || company.name || 'Company';
+            // Get company details
+            const company = await User.findById(companyId).populate('profile');
+            const companyName = company.profile?.companyName || company.name || 'Company';
 
-        if (status === 'interview' && interviewDetails) {
-            // Send interview scheduling email
-            await sendInterviewEmail(
-                application.seeker.email,
-                application.seeker.name,
-                interviewDetails,
-                application.job.title,
-                companyName
-            );
-        } else {
-            // Send general status update email
-            await sendStatusUpdateEmail(
-                application.seeker.email,
-                application.seeker.name,
-                status,
-                application.job.title,
-                companyName
-            );
+            if (status === 'interview' && interviewDetails) {
+                // Send interview scheduling email
+                await sendInterviewEmail(
+                    application.seeker.email,
+                    application.seeker.name,
+                    interviewDetails,
+                    application.job.title,
+                    companyName
+                );
+                console.log('✓ Interview email sent successfully');
+            } else {
+                // Send general status update email
+                await sendStatusUpdateEmail(
+                    application.seeker.email,
+                    application.seeker.name,
+                    status,
+                    application.job.title,
+                    companyName
+                );
+                console.log('✓ Status update email sent successfully');
+            }
+        } catch (emailError) {
+            // Email sending failed - log but don't crash
+            console.warn('⚠️  Email notification not sent (email not configured):', emailError.message);
+            // Continue anyway - status update was successful
         }
+
 
         res.json({
             message: 'Application status updated successfully',

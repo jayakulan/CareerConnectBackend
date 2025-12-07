@@ -1,0 +1,311 @@
+TECHNICAL SKILLS AND KEYWORDS BY ROLE
+
+=== SOFTWARE ENGINEERING ===
+
+PROGRAMMING LANGUAGES:
+- Frontend: JavaScript, TypeScript, HTML5, CSS3, React, Vue.js, Angular, Svelte
+- Backend: Python, Java, C#, Go, Ruby, PHP, Node.js, Rust
+- Mobile: Swift, Kotlin, React Native, Flutter, Xamarin
+- Data: Python, R, SQL, Scala, Julia
+- Systems: C, C++, Rust, Assembly
+
+FRAMEWORKS AND LIBRARIES:
+- Web: React, Angular, Vue.js, Next.js, Express.js, Django, Flask, Spring Boot, ASP.NET
+- Mobile: React Native, Flutter, SwiftUI, Jetpack Compose
+- Data Science: TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy
+- Testing: Jest, Mocha, Pytest, JUnit, Selenium, Cypress
+
+DATABASES:
+- Relational: PostgreSQL, MySQL, Oracle, SQL Server, SQLite
+- NoSQL: MongoDB, Cassandra, Redis, DynamoDB, Couchbase
+- Graph: Neo4j, Amazon Neptune
+- Vector: Pinecone, Weaviate, Milvus
+- Time-series: InfluxDB, TimescaleDB
+
+CLOUD PLATFORMS:
+- AWS: EC2, S3, Lambda, RDS, DynamoDB, CloudFormation, ECS, EKS
+- Azure: Virtual Machines, Blob Storage, Functions, SQL Database, Cosmos DB
+- Google Cloud: Compute Engine, Cloud Storage, Cloud Functions, BigQuery
+- Multi-cloud: Kubernetes, Docker, Terraform
+
+DEVOPS AND TOOLS:
+- Version Control: Git, GitHub, GitLab, Bitbucket
+- CI/CD: Jenkins, GitHub Actions, GitLab CI, CircleCI, Travis CI
+- Containerization: Docker, Kubernetes, Docker Compose
+- Infrastructure: Terraform, Ansible, CloudFormation, Pulumi
+- Monitoring: Prometheus, Grafana, DataDog, New Relic, Splunk
+
+METHODOLOGIES:
+- Agile, Scrum, Kanban, SAFe
+- Test-Driven Development (TDD)
+- Behavior-Driven Development (BDD)
+- Continuous Integration/Continuous Deployment (CI/CD)
+- Microservices Architecture
+- Domain-Driven Design (DDD)
+
+=== DATA SCIENCE AND ANALYTICS ===
+
+CORE SKILLS:
+- Statistical Analysis
+- Machine Learning
+- Deep Learning
+- Natural Language Processing
+- Computer Vision
+- Time Series Analysis
+- A/B Testing
+- Predictive Modeling
+
+TOOLS AND PLATFORMS:
+- Python: Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, Keras
+- R: ggplot2, dplyr, tidyr, caret, shiny
+- SQL: PostgreSQL, MySQL, BigQuery, Snowflake
+- Visualization: Tableau, Power BI, Matplotlib, Seaborn, Plotly
+- Big Data: Spark, Hadoop, Hive, Kafka
+- Cloud: AWS SageMaker, Azure ML, Google AI Platform
+
+TECHNIQUES:
+- Regression Analysis
+- Classification
+- Clustering
+- Dimensionality Reduction
+- Ensemble Methods
+- Neural Networks
+- Reinforcement Learning
+- Feature Engineering
+
+=== PRODUCT MANAGEMENT ===
+
+CORE COMPETENCIES:
+- Product Strategy
+- Roadmap Development
+- User Research
+- Market Analysis
+- Competitive Analysis
+- Stakeholder Management
+- Agile Methodologies
+- Data-Driven Decision Making
+
+TOOLS:
+- Product Management: Jira, Asana, Trello, Monday.com, ProductBoard
+- Analytics: Google Analytics, Mixpanel, Amplitude, Heap
+- Design: Figma, Sketch, Adobe XD, InVision
+- User Research: UserTesting, Hotjar, SurveyMonkey
+- Collaboration: Confluence, Notion, Miro, Slack
+
+FRAMEWORKS:
+- OKRs (Objectives and Key Results)
+- RICE Prioritization
+- Kano Model
+- Jobs to be Done (JTBD)
+- Product-Market Fit
+- North Star Metric
+
+=== DIGITAL MARKETING ===
+
+CHANNELS:
+- Search Engine Optimization (SEO)
+- Pay-Per-Click (PPC)
+- Social Media Marketing
+- Email Marketing
+- Content Marketing
+- Influencer Marketing
+- Affiliate Marketing
+- Video Marketing
+
+PLATFORMS:
+- Google Ads
+- Facebook Ads Manager
+- LinkedIn Campaign Manager
+- Twitter Ads
+- Instagram Marketing
+- TikTok Ads
+- YouTube Marketing
+- Pinterest Ads
+
+TOOLS:
+- Analytics: Google Analytics, Adobe Analytics, Mixpanel
+- SEO: SEMrush, Ahrefs, Moz, Google Search Console
+- Email: Mailchimp, HubSpot, Constant Contact, SendGrid
+- Social Media: Hootsuite, Buffer, Sprout Social
+- CRM: Salesforce, HubSpot, Marketo
+- A/B Testing: Optimizely, VWO, Google Optimize
+
+METRICS:
+- Conversion Rate
+- Click-Through Rate (CTR)
+- Cost Per Acquisition (CPA)
+- Return on Ad Spend (ROAS)
+- Customer Lifetime Value (CLV)
+- Engagement Rate
+- Bounce Rate
+- Traffic Sources
+
+=== CYBERSECURITY ===
+
+CORE AREAS:
+- Network Security
+- Application Security
+- Cloud Security
+- Identity and Access Management
+- Incident Response
+- Threat Intelligence
+- Vulnerability Management
+- Security Compliance
+
+TOOLS AND TECHNOLOGIES:
+- SIEM: Splunk, QRadar, ArcSight, LogRhythm
+- Firewalls: Palo Alto, Cisco ASA, Fortinet, Check Point
+- Endpoint: CrowdStrike, Carbon Black, SentinelOne
+- Vulnerability Scanning: Nessus, Qualys, Rapid7
+- Penetration Testing: Metasploit, Burp Suite, Kali Linux
+- Cloud Security: AWS Security Hub, Azure Security Center
+
+CERTIFICATIONS:
+- CISSP (Certified Information Systems Security Professional)
+- CEH (Certified Ethical Hacker)
+- CISM (Certified Information Security Manager)
+- CompTIA Security+
+- OSCP (Offensive Security Certified Professional)
+- GIAC Certifications
+
+=== CLOUD ARCHITECTURE ===
+
+AWS SERVICES:
+- Compute: EC2, Lambda, ECS, EKS, Fargate
+- Storage: S3, EBS, EFS, Glacier
+- Database: RDS, DynamoDB, Aurora, Redshift
+- Networking: VPC, Route 53, CloudFront, API Gateway
+- Security: IAM, KMS, Secrets Manager, WAF
+- Monitoring: CloudWatch, X-Ray, CloudTrail
+
+AZURE SERVICES:
+- Compute: Virtual Machines, App Service, Functions, AKS
+- Storage: Blob Storage, File Storage, Disk Storage
+- Database: SQL Database, Cosmos DB, PostgreSQL
+- Networking: Virtual Network, Load Balancer, Application Gateway
+- Security: Active Directory, Key Vault, Security Center
+- Monitoring: Monitor, Application Insights, Log Analytics
+
+GOOGLE CLOUD SERVICES:
+- Compute: Compute Engine, Cloud Functions, GKE, Cloud Run
+- Storage: Cloud Storage, Persistent Disk, Filestore
+- Database: Cloud SQL, Firestore, BigQuery, Spanner
+- Networking: VPC, Cloud Load Balancing, Cloud CDN
+- Security: IAM, Cloud KMS, Security Command Center
+- Monitoring: Cloud Monitoring, Cloud Logging, Cloud Trace
+
+ARCHITECTURE PATTERNS:
+- Microservices
+- Serverless
+- Event-Driven Architecture
+- Multi-tier Architecture
+- Service-Oriented Architecture (SOA)
+- Domain-Driven Design
+- CQRS (Command Query Responsibility Segregation)
+
+=== UI/UX DESIGN ===
+
+DESIGN SKILLS:
+- User Interface Design
+- User Experience Design
+- Interaction Design
+- Visual Design
+- Prototyping
+- Wireframing
+- User Research
+- Usability Testing
+
+TOOLS:
+- Design: Figma, Sketch, Adobe XD, InVision
+- Prototyping: Framer, Principle, ProtoPie
+- Graphics: Adobe Photoshop, Illustrator, After Effects
+- Collaboration: Miro, FigJam, Whimsical
+- Handoff: Zeplin, Avocode
+
+PRINCIPLES:
+- Design Thinking
+- Human-Centered Design
+- Accessibility (WCAG)
+- Responsive Design
+- Mobile-First Design
+- Material Design
+- Apple Human Interface Guidelines
+- Atomic Design
+
+=== DEVOPS ENGINEERING ===
+
+CORE PRACTICES:
+- Continuous Integration
+- Continuous Deployment
+- Infrastructure as Code
+- Configuration Management
+- Monitoring and Logging
+- Incident Management
+- Capacity Planning
+- Disaster Recovery
+
+TOOLS:
+- CI/CD: Jenkins, GitLab CI, GitHub Actions, CircleCI
+- Containers: Docker, Kubernetes, OpenShift
+- IaC: Terraform, CloudFormation, Pulumi, Ansible
+- Monitoring: Prometheus, Grafana, ELK Stack, DataDog
+- Version Control: Git, GitHub, GitLab, Bitbucket
+- Scripting: Bash, Python, PowerShell
+
+CLOUD PLATFORMS:
+- AWS DevOps Tools
+- Azure DevOps
+- Google Cloud Build
+- Kubernetes (EKS, AKS, GKE)
+
+=== PROJECT MANAGEMENT ===
+
+METHODOLOGIES:
+- Agile/Scrum
+- Waterfall
+- Kanban
+- Lean
+- Six Sigma
+- PRINCE2
+- PMI/PMBOK
+
+TOOLS:
+- Project Management: Jira, Asana, Monday.com, MS Project
+- Collaboration: Slack, Microsoft Teams, Zoom
+- Documentation: Confluence, Notion, SharePoint
+- Time Tracking: Harvest, Toggl, Clockify
+- Resource Management: Smartsheet, Wrike
+
+CERTIFICATIONS:
+- PMP (Project Management Professional)
+- Certified Scrum Master (CSM)
+- PRINCE2
+- Agile Certified Practitioner (PMI-ACP)
+- Six Sigma Green/Black Belt
+
+=== BUSINESS ANALYSIS ===
+
+CORE SKILLS:
+- Requirements Gathering
+- Process Modeling
+- Data Analysis
+- Stakeholder Management
+- Gap Analysis
+- Use Case Development
+- Business Process Improvement
+- Change Management
+
+TOOLS:
+- Modeling: Visio, Lucidchart, Draw.io
+- Analysis: Excel, SQL, Tableau, Power BI
+- Documentation: Confluence, SharePoint, Google Docs
+- Requirements: Jira, Azure DevOps, IBM DOORS
+
+TECHNIQUES:
+- SWOT Analysis
+- PESTLE Analysis
+- User Stories
+- Business Process Modeling Notation (BPMN)
+- UML Diagrams
+- Data Flow Diagrams
+- Entity Relationship Diagrams
