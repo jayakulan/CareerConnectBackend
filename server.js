@@ -5,7 +5,7 @@ import connectDB from './config/db.js';
 import aiRoutes from "./routes/aiRoutes.js";
 import { initPinecone } from "./services/pineconeClient.js";
 
-// Load env vars
+// Load env vars (forcing restart)
 dotenv.config();
 
 // Connect to database
