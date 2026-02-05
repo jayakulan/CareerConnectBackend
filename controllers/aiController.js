@@ -2,6 +2,11 @@
 import OpenAI from "openai";
 import { getResumeAnalysisContext, formatContext } from "../services/retrieval.js";
 import dotenv from "dotenv";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+// Load pdf-parse at top level so Vercel detects it
+const pdfParse = require("pdf-parse");
 
 dotenv.config();
 
@@ -47,13 +52,6 @@ export const analyzeResume = async (req, res) => {
         if (req.file) {
             try {
                 console.log("Extracting text from PDF...");
-                console.log("Extracting text from PDF...");
-
-                // Use createRequire to load pdf-parse to avoid ESM "module.parent" issues
-                // which cause the library to think it's running in test mode
-                const { createRequire } = await import("module");
-                const require = createRequire(import.meta.url);
-                const pdfParse = require("pdf-parse");
 
                 const pdfData = await pdfParse(req.file.buffer);
                 resumeText = pdfData.text;
